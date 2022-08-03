@@ -2,11 +2,11 @@ _base_ = ["swin_base_patch244_window1677_bevt_finetune_ssv2.py"]
 
 # dataset settings
 dataset_type = "VideoDataset"
-data_root = "DATASET/videodata/sthv2/videos"
-data_root_val = "DATASET/videodata/sthv2/videos"
-ann_file_train = "DATASET/videodata/sthv2/sthv2_train_list_videos.txt"
-ann_file_val = "DATASET/videodata/sthv2/sthv2_val_list_videos.txt"
-ann_file_test = "DATASET/videodata/sthv2/sthv2_val_list_videos.txt"
+data_root = "DATASET/papadamou/videos"
+data_root_val = "DATASET/papadamou/videos"
+ann_file_train = "DATASET/papadamou/papadamou_train_list_videos.txt"
+ann_file_val = "DATASET/papadamou/papadamou_val_list_videos.txt"
+ann_file_test = "DATASET/papadamou/papadamou_val_list_videos.txt"
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False
 )
