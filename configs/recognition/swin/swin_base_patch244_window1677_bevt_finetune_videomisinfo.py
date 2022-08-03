@@ -1,4 +1,4 @@
-_base_ = ["swin_base_patch244_window1677_bevt_finetune_ssv2.py"]
+_base_ = ["../../_base_/models/swin/swin_base.py", "../../_base_/default_runtime.py"]
 
 # dataset settings
 dataset_type = "VideoDataset"
