@@ -2,8 +2,8 @@ _base_ = ["../../_base_/models/swin/swin_base.py", "../../_base_/default_runtime
 
 # dataset settings
 dataset_type = "VideoDataset"
-data_root = "DATASET/papadamou/videos"
-data_root_val = "DATASET/papadamou/videos"
+data_root = "DATASET/papadamou"
+data_root_val = "DATASET/papadamou"
 ann_file_train = "DATASET/papadamou/papadamou_train_list_videos.txt"
 ann_file_val = "DATASET/papadamou/papadamou_val_list_videos.txt"
 ann_file_test = "DATASET/papadamou/papadamou_test_list_videos.txt"
