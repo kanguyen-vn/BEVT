@@ -6,7 +6,7 @@ data_root = "DATASET/papadamou/videos"
 data_root_val = "DATASET/papadamou/videos"
 ann_file_train = "DATASET/papadamou/papadamou_train_list_videos.txt"
 ann_file_val = "DATASET/papadamou/papadamou_val_list_videos.txt"
-ann_file_test = "DATASET/papadamou/papadamou_val_list_videos.txt"
+ann_file_test = "DATASET/papadamou/papadamou_test_list_videos.txt"
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_bgr=False
 )
