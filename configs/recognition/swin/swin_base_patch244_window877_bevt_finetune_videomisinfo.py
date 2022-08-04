@@ -126,7 +126,7 @@ total_epochs = 60
 # runtime settings
 checkpoint_config = dict(interval=5, create_symlink=False)
 auto_resume = True
-work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
+# work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
 find_unused_parameters = False
 custom_hooks = [dict(type="EMAHook")]
 
@@ -142,8 +142,6 @@ optimizer_config = dict(
 
 model = dict(
     backbone=dict(
-        patch_size=(2, 4, 4),
-        window_size=(16, 7, 7),
         drop_path_rate=0.4,
         pretrained2d=False,
         pretrained_window_size=(8, 7, 7),
