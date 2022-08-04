@@ -83,11 +83,6 @@ def main():
 
     cfg.merge_from_dict(args.cfg_options)
 
-    print(cfg.log_level)
-    print(cfg.dist_params)
-    import sys
-    sys.exit(0)
-
     # set cudnn_benchmark
     if cfg.get('cudnn_benchmark', False):
         torch.backends.cudnn.benchmark = True

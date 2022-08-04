@@ -126,7 +126,7 @@ total_epochs = 60
 # runtime settings
 checkpoint_config = dict(interval=5, create_symlink=False)
 auto_resume = True
-work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
+# work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
 find_unused_parameters = False
 custom_hooks = [dict(type="EMAHook")]
 
@@ -152,3 +152,5 @@ model = dict(
     test_cfg=dict(max_testing_views=2),
     train_cfg=dict(blending=dict(type="LabelSmoothing", num_classes=2, smoothing=0.1)),
 )
+
+log_level = "INFO"
