@@ -151,3 +151,5 @@ model = dict(
     test_cfg=dict(max_testing_views=2),
     train_cfg=dict(blending=dict(type="LabelSmoothing", num_classes=2, smoothing=0.1)),
 )
+
+log_level = "INFO"
