@@ -142,6 +142,7 @@ optimizer_config = dict(
 
 model = dict(
     backbone=dict(
+        patch_size=(2, 4, 4),
         drop_path_rate=0.4,
         pretrained2d=False,
         pretrained_window_size=(8, 7, 7),
