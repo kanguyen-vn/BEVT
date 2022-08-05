@@ -153,3 +153,4 @@ model = dict(
 )
 
 log_level = "INFO"
+tokenizer_path = "/home/data/video-misinfo/papadamou/pretrained/dall_e_tokenizer_weight"

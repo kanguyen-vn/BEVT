@@ -1,9 +1,10 @@
+# fmt: off
 _base_ = [
     '../../_base_/default_runtime.py'
 ]
 
 # encoder.pkl saved under tokenizer_path
-tokenizer_path = '/path/to/save/dall_e_tokenizer_weight'
+tokenizer_path = '/home/data/video-misinfo/papadamou/pretrained/dall_e_tokenizer_weight'
 
 model=dict(type='BEVTMultiSource',
            backbone=dict(type='SwinTransformerBEVT',
