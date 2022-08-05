@@ -84,9 +84,6 @@ def build_dataloader(dataset,
     rank, world_size = get_dist_info()
     sample_by_class = getattr(dataset, 'sample_by_class', False)
 
-    print(dist)
-    print(videos_per_gpu)
-
     if dist:
         if sample_by_class:
             dynamic_length = getattr(dataset, 'dynamic_length', True)

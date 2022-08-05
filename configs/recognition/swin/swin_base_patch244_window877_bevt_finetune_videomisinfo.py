@@ -133,7 +133,7 @@ custom_hooks = [dict(type="EMAHook")]
 fp16 = None
 optimizer_config = dict(
     type="DistOptimizerHook",
-    update_interval=8,
+    update_interval=1,
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
