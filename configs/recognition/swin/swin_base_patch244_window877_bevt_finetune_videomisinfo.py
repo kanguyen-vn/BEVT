@@ -70,8 +70,8 @@ test_pipeline = [
     dict(type="ToTensor", keys=["imgs"]),
 ]
 data = dict(
-    videos_per_gpu=1,
-    workers_per_gpu=1,
+    videos_per_gpu=8,
+    workers_per_gpu=4,
     val_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     test_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     train=dict(
@@ -126,14 +126,14 @@ total_epochs = 60
 # runtime settings
 checkpoint_config = dict(interval=5, create_symlink=False)
 auto_resume = True
-# work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
+work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
 find_unused_parameters = False
 custom_hooks = [dict(type="EMAHook")]
 
 fp16 = None
 optimizer_config = dict(
     type="DistOptimizerHook",
-    update_interval=1,
+    update_interval=4,
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
