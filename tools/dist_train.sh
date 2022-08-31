@@ -1,5 +1,5 @@
 #!/bin/bash
-GPUS=`nvidia-smi -L | wc -l`
+GPUS=8
 
 RANK=0
 NODE_COUNT=1
