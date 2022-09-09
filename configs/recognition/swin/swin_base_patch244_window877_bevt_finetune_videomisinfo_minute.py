@@ -14,7 +14,7 @@ train_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=64,
+        clip_len=32,
         frame_interval=30,
         num_clips=1,
         frame_uniform=True,
@@ -35,7 +35,7 @@ val_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=64,
+        clip_len=32,
         frame_interval=30,
         num_clips=1,
         frame_uniform=True,
@@ -54,7 +54,7 @@ test_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=64,
+        clip_len=32,
         frame_interval=30,
         num_clips=1,
         frame_uniform=True,
@@ -70,8 +70,8 @@ test_pipeline = [
     dict(type="ToTensor", keys=["imgs"]),
 ]
 data = dict(
-    videos_per_gpu=2,
-    workers_per_gpu=1,
+    videos_per_gpu=8,
+    workers_per_gpu=4,
     val_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     test_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     train=dict(
@@ -133,7 +133,7 @@ custom_hooks = [dict(type="EMAHook")]
 fp16 = None
 optimizer_config = dict(
     type="DistOptimizerHook",
-    update_interval=2,
+    update_interval=8,
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
