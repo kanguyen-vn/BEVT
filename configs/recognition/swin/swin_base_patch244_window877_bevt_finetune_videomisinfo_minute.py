@@ -14,8 +14,8 @@ train_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=128,
-        frame_interval=15,
+        clip_len=64,
+        frame_interval=30,
         num_clips=1,
         frame_uniform=True,
     ),
@@ -35,8 +35,8 @@ val_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=128,
-        frame_interval=15,
+        clip_len=64,
+        frame_interval=30,
         num_clips=1,
         frame_uniform=True,
         test_mode=True,
@@ -54,8 +54,8 @@ test_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=128,
-        frame_interval=15,
+        clip_len=64,
+        frame_interval=30,
         num_clips=1,
         frame_uniform=True,
         test_mode=True,
