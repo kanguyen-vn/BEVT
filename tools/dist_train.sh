@@ -1,11 +1,11 @@
 #!/bin/bash
 GPUS=1
 
-# RANK=0
+RANK=0
 NODE_COUNT=8
 MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
 MASTER_PORT=29500
-# echo "rank: ${RANK}"
+echo "rank: ${RANK}"
 echo "node count: ${NODE_COUNT}"
 echo "master addr: ${MASTER_ADDR}"
 echo "master port: ${MASTER_PORT}"
