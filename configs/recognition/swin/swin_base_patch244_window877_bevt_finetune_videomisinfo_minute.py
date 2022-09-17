@@ -14,7 +14,7 @@ train_pipeline = [
     dict(type="DecordInit"),
     dict(
         type="SampleFrames",
-        clip_len=32,
+        clip_len=64,
         frame_interval=30,
         num_clips=1,
         # frame_uniform=True,
@@ -70,7 +70,7 @@ test_pipeline = [
     dict(type="ToTensor", keys=["imgs"]),
 ]
 data = dict(
-    videos_per_gpu=8,
+    videos_per_gpu=2,
     workers_per_gpu=4,
     val_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     test_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
