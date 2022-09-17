@@ -136,3 +136,6 @@ mmaction/tools/*
 # avoid naming conflit on itp
 DATASET/
 OUTPUT/
+
+# experiments notebook
+experiments.ipynb
