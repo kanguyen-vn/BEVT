@@ -13,7 +13,7 @@ SRUN_ARGS=${SRUN_ARGS:-""}
 PY_ARGS=${@:4}  # Any arguments from the forth one are captured by this
 
 PYTHONPATH="$(dirname $0)/..":$PYTHONPATH \
-srun -p ${PARTITION} \
+sbatch -p ${PARTITION} \
     --job-name=${JOB_NAME} \
     --gres=gpu:${GPUS_PER_NODE} \
     --ntasks=${GPUS} \
