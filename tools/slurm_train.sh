@@ -19,6 +19,5 @@ sbatch -p ${PARTITION} \
     --ntasks=${GPUS} \
     --ntasks-per-node=${GPUS_PER_NODE} \
     --cpus-per-task=${CPUS_PER_TASK} \
-    --kill-on-bad-exit=1 \
     ${SRUN_ARGS} \
     python -u tools/train.py ${CONFIG} --launcher="slurm" ${PY_ARGS}
