@@ -15,7 +15,7 @@ train_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
         # frame_uniform=True,
     ),
@@ -36,7 +36,7 @@ val_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
         # frame_uniform=True,
         test_mode=True,
@@ -55,7 +55,7 @@ test_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
         # frame_uniform=True,
         test_mode=True,
