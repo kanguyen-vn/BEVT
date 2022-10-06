@@ -6,7 +6,8 @@ import os.path as osp
 import time
 import warnings
 
-print(f"cwd: {os.getcwd()}")
+import sys
+sys.path.append(os.getcwd())
 
 import mmcv
 import torch
