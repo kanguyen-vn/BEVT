@@ -269,6 +269,11 @@ class SampleFrames:
         results['clip_len'] = self.clip_len
         results['frame_interval'] = self.frame_interval
         results['num_clips'] = self.num_clips
+
+        print(results['filename'])
+        import sys
+        sys.exit(0)
+
         return results
 
     def __repr__(self):
