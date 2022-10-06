@@ -6,6 +6,8 @@ import os.path as osp
 import time
 import warnings
 
+print(f"cwd: {os.getcwd()}")
+
 import mmcv
 import torch
 from mmcv import Config, DictAction
