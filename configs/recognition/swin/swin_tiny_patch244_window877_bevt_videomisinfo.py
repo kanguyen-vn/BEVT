@@ -15,18 +15,18 @@ train_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
-        frame_uniform=True,
+        # frame_uniform=True,
     ),
     dict(type="DecordDecode"),
     dict(type="Resize", scale=(-1, 256)),
     dict(type="RandomResizedCrop"),
     dict(type="Resize", scale=(224, 224), keep_ratio=False),
     dict(type="Flip", flip_ratio=0),
-    dict(type="Imgaug", transforms=[dict(type="RandAugment", n=4, m=7)]),
+    # dict(type="Imgaug", transforms=[dict(type="RandAugment", n=4, m=7)]),
     dict(type="Normalize", **img_norm_cfg),
-    dict(type="RandomErasing", probability=0.25),
+    # dict(type="RandomErasing", probability=0.25),
     dict(type="FormatShape", input_format="NCTHW"),
     dict(type="Collect", keys=["imgs", "label"], meta_keys=[]),
     dict(type="ToTensor", keys=["imgs", "label"]),
@@ -36,9 +36,9 @@ val_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
-        frame_uniform=True,
+        # frame_uniform=True,
         test_mode=True,
     ),
     dict(type="DecordDecode"),
@@ -55,9 +55,9 @@ test_pipeline = [
     dict(
         type="SampleFrames",
         clip_len=32,
-        frame_interval=2,
+        frame_interval=30,
         num_clips=1,
-        frame_uniform=True,
+        # frame_uniform=True,
         test_mode=True,
     ),
     dict(type="DecordDecode"),
@@ -100,7 +100,7 @@ evaluation = dict(
 # optimizer
 optimizer = dict(
     type="AdamW",
-    lr=5e-4,
+    lr=1e-3,
     betas=(0.9, 0.999),
     weight_decay=0.05,
     paramwise_cfg=dict(
@@ -121,19 +121,19 @@ lr_config = dict(
     warmup_by_epoch=True,
     warmup_iters=2.5,
 )
-total_epochs = 60
+total_epochs = 30
 
 # runtime settings
 checkpoint_config = dict(interval=5, create_symlink=False)
 auto_resume = True
-# work_dir = "OUTPUT/swin_base_bevt_finetune_videomisinfo"
+work_dir = "OUTPUT/swin_tiny_bevt_finetune_videomisinfo"
 find_unused_parameters = False
 custom_hooks = [dict(type="EMAHook")]
 
 fp16 = None
 optimizer_config = dict(
     type="DistOptimizerHook",
-    update_interval=8,
+    update_interval=4,
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
@@ -143,12 +143,12 @@ optimizer_config = dict(
 model = dict(
     backbone=dict(
         patch_size=(2, 4, 4),
-        drop_path_rate=0.4,
-        pretrained2d=False,
-        pretrained_window_size=(8, 7, 7),
+        drop_path_rate=0.1,
+        # pretrained2d=False,
+        # pretrained_window_size=(8, 7, 7),
     ),
     cls_head=dict(num_classes=2),
-    test_cfg=dict(max_testing_views=2),
+    test_cfg=dict(max_testing_views=4),
     train_cfg=dict(blending=dict(type="LabelSmoothing", num_classes=2, smoothing=0.1)),
 )
 
