@@ -182,6 +182,7 @@ model = dict(
         drop_path_rate=0.3,
         pretrained2d=False,
         # pretrained_window_size=(8, 7, 7),
+        frozen_stages=4
     ),
     cls_head=dict(num_classes=2),
     test_cfg=dict(max_testing_views=2),
