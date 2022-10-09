@@ -70,8 +70,8 @@ test_pipeline = [
     dict(type="ToTensor", keys=["imgs"]),
 ]
 data = dict(
-    videos_per_gpu=2,
-    workers_per_gpu=2,
+    videos_per_gpu=1,
+    workers_per_gpu=1,
     val_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     test_dataloader=dict(videos_per_gpu=1, workers_per_gpu=1),
     train=dict(
@@ -114,7 +114,7 @@ evaluation = dict(
 # )
 # optimizer
 lw_lr_decay = 0.9
-optimizer = dict(type='AdamW', lr=0.0000375, betas=(0.9, 0.999), weight_decay=0.001,
+optimizer = dict(type='AdamW', lr=9e-6, betas=(0.9, 0.999), weight_decay=0.001,
                  paramwise_cfg=dict(custom_keys={'absolute_pos_embed': dict(decay_mult=0.),
                                                  'relative_position_bias_table': dict(decay_mult=0.),
                                                  'norm': dict(decay_mult=0.),
@@ -169,7 +169,7 @@ custom_hooks = [dict(type="EMAHook")]
 fp16 = None
 optimizer_config = dict(
     type="DistOptimizerHook",
-    update_interval=2,
+    update_interval=1,
     grad_clip=None,
     coalesce=True,
     bucket_size_mb=-1,
